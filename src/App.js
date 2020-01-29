@@ -13,12 +13,23 @@ function App() {
       setData(result);
     }
     fetchData();
-  });
+  }, []);
+  //square brakets stop the re-rendering
   return (
     <div className="App">
       <header>
-        <h1> Videos </h1>
+        <h1> Videos </h1>      
       </header>
+      <div className="container col-lg-6">
+        {data.map( video =>(
+          <div className="card col ">
+           <div className="card-body ">
+            <h5> { video.name } </h5>
+            <video height={ 200 } controls src = { video.video_url } />
+          </div>
+          </div>
+        ))}
+ </div>
     </div>
   );
 }
