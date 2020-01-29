@@ -20,9 +20,9 @@ function App() {
       <header>
         <h1> Videos </h1>      
       </header>
-      <div className="container col-lg-6">
+      <div className="col container col-lg-4">
         {data.map( video =>(
-          <div className="card col ">
+          <div key={ video.id } className="card row ">
            <div className="card-body ">
             <h5> { video.name } </h5>
             <video height={ 200 } controls src = { video.video_url } />
